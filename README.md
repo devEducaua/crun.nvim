@@ -12,6 +12,7 @@ require("comprun").setup({
     show_command = false, -- show what command is used
     commands = { -- what the compilation/run command
         c = "gcc &f -o &o",
+        cpp = "g++ &f -o &o",
         haskell = "ghc &f -o &o",
         kotlin = "kotlinc &f -include-runtime -d &o.jar",
         python = "python3 &f",
