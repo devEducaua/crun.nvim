@@ -6,6 +6,7 @@ M.config = {
     show_command = false,
     commands = {
         c = "gcc &f -o &o",
+        cpp = "g++ &f -o &o",
         haskell = "ghc &f -o &o",
         kotlin = "kotlinc &f -include-runtime -d &o.jar",
         python = "python3 &f",
@@ -80,6 +81,13 @@ M.get_command = function (ext, file)
     elseif (ext == '.c') then
         local wfile = string.gsub(M.config.commands.c, "&f", file)
         local out = string.gsub(wfile, "&o", string.gsub(file, ".c", ""))
+
+        cmd = out
+
+    -- C++
+    elseif (ext == '.cpp') then
+        local wfile = string.gsub(M.config.commands.cpp, "&f", file)
+        local out = string.gsub(wfile, "&o", string.gsub(file, ".cpp", ""))
 
         cmd = out
 
