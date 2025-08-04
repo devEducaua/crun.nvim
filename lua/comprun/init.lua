@@ -80,28 +80,28 @@ M.get_command = function (ext, file)
     -- C
     elseif (ext == '.c') then
         local wfile = string.gsub(M.config.commands.c, "&f", file)
-        local out = string.gsub(wfile, "&o", string.gsub(file, ".c", ""))
+        local out = string.gsub(wfile, "&o", string.gsub(file, ext, ""))
 
         cmd = out
 
     -- C++
     elseif (ext == '.cpp') then
         local wfile = string.gsub(M.config.commands.cpp, "&f", file)
-        local out = string.gsub(wfile, "&o", string.gsub(file, ".cpp", ""))
+        local out = string.gsub(wfile, "&o", string.gsub(file, ext, ""))
 
         cmd = out
 
     -- Haskell
     elseif (ext == '.hs') then
         local wfile = string.gsub(M.config.commands.haskell, "&f", file)
-        local out = string.gsub(wfile, "&o", string.gsub(file, ".hs", ""))
+        local out = string.gsub(wfile, "&o", string.gsub(file, ext, ""))
 
         cmd = out
 
     -- Kotlin
     elseif (ext == '.kt') then
         local wfile = string.gsub(M.config.commands.kotlin, "&f", file)
-        local out = string.gsub(wfile, "&o", string.gsub(file, ".kt", ""))
+        local out = string.gsub(wfile, "&o", string.gsub(file, ext, ""))
 
         cmd = out
 
