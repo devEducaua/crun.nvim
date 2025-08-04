@@ -23,6 +23,8 @@ require("comprun").setup({
         markdown = "glow &f",
         javascript =  "node &f",
         typescript =  "bun &f",
+        html = "bun %f",
+        sass = "sass &f"
     }
 })
 ```

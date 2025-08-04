@@ -20,7 +20,8 @@ M.config = {
         fish = "fish &f",
         javascript = "node &f",
         typescript = "bun &f",
-        html = "bun &f"
+        html = "bun &f",
+        sass = "sass &f"
     }
 }
 
@@ -141,6 +142,10 @@ M.get_command = function (ext, file)
         cmd = wfile
 
     elseif (ext == '.html') then
+        local wfile = string.gsub(M.config.commands.html, "&f", file)
+        cmd = wfile
+
+    elseif (ext == ".scss" or ext == ".sass") then
         local wfile = string.gsub(M.config.commands.html, "&f", file)
         cmd = wfile
 
