@@ -1,12 +1,12 @@
-# Comprun
+# Crun.nvim
 Compile and run everything with a simple keybinding.
 
 ## Install
 ```lua
 {
-    "devEducaua/comprun.nvim",
+    "devEducaua/crun.nvim",
     config = function()
-        require("comprun").setup()
+        require("crun").setup()
     end
 }
 ```
@@ -18,7 +18,7 @@ Compile and run everything with a simple keybinding.
 ### defaults
 
 ```lua
-require("comprun").setup({
+require("crun").setup({
     show_command = false, -- show what command is used
     commands = { -- what the compilation/run command
         c = "gcc &f -o &o",
@@ -50,7 +50,7 @@ example with Oil.nvim
     desc = "compile",
     callback = function ()
         local name = require("oil").get_cursor_entry().name
-        vim.cmd(":Comprun " .. name)
+        vim.cmd(":Crun " .. name)
     end
 },
 ```
