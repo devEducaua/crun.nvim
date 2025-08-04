@@ -1,6 +1,6 @@
 - [x] Go
 - [x] C++
-- [ ] Ruby
+- [x] Ruby
 - [ ] C#
 - [ ] Nim
 - [ ] Zig
@@ -13,7 +13,7 @@
 - [ ] Cobol
 - [ ] Fortran
 - [ ] Gleam
-- [ ] Perl
+- [x] Perl
 - [ ] Nix
 - [ ] Json / Xml / Toml / Yaml
 - [ ] R

@@ -1,0 +1,55 @@
+*crun.txt*   crun.nvim - Compile and run files from Neovim
+
+==============================================================================
+INTRODUCTION                                              *crun*
+    crun.nvim allows you to compile and/or run files directly from
+    within Neovim. It supports multiple programming languages.
+
+==============================================================================
+CONFIGURATION                                             *crun-config*
+    Default configuration:
+
+        require("crun").setup({
+            show_command = false,
+            commands = {
+                c          = "gcc &f -o &o",
+                cpp        = "g++ &f -o &o",
+                haskell    = "ghc &f -o &o",
+                rust       = "rustc &f",
+                go         = "go run &f",
+
+                kotlin     = "kotlinc &f -include-runtime -d &o.jar",
+                java       = "javac &f",
+
+                python     = "python3 &f",
+                lua        = "lua &f",
+                sass       = "sass &f",
+                elixir     = "elixir &f",
+                bash       = "bash &f",
+                fish       = "fish &f",
+                javascript = "node &f",
+                typescript = "bun &f",
+                ruby       = "ruby &f",
+
+                markdown   = "glow &f",
+                executable = "./&f",
+                html       = "bun &f",
+            }
+        })
+
+    You can change the commands:
+    Examples:
+        commands = {
+            c = "cc -o &o -c &f"
+            c = "gcc &f"
+            c = "tcc -run &f"
+        }
+
+    &f -> is the filename
+    &o -> is the output name (the name without the extension)
+==============================================================================
+USAGE                                                    *crun-usage*
+    Run a specific file:
+        :Crun path/to/file
+
+==============================================================================
