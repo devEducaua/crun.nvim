@@ -13,6 +13,7 @@ M.config = {
         lua = "lua &f",
         php = "php &f",
         rust = "rustc &f",
+        go = "go run &f",
         elixir = "elixir &f",
         java = "javac &f",
         markdown = "glow &f",
@@ -123,6 +124,11 @@ M.get_command = function (ext, file)
     -- Rust
     elseif (ext == '.rs') then
         local wfile = string.gsub(M.config.commands.rust, "&f", file)
+        cmd = wfile
+
+    -- Go
+    elseif (ext == '.go') then
+        local wfile = string.gsub(M.config.commands.go, "&f", file)
         cmd = wfile
 
     -- Elixir
