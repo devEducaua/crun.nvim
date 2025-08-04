@@ -13,7 +13,7 @@ Compile and run everything with a simple keybinding.
 
 ## Options
 &f -> is the file name
-%o -> is the output name
+&o -> is the output name
 
 ### defaults
 
