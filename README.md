@@ -1,0 +1,40 @@
+# Comprun
+Compile and run everything with a simple keybinding.
+
+## Options
+&f -> is the file name
+%o -> is the output name
+
+### defaults
+
+```lua
+require("comprun").setup({
+    show_command = false, -- show what command is used
+    commands = { -- what the compilation/run command
+        c = "gcc &f -o &o",
+        haskell = "ghc &f -o &o",
+        kotlin = "kotlinc &f -include-runtime -d &o.jar",
+        python = "python3 &f",
+        lua = "lua &f",
+        php = "php &f",
+        rust = "rustc &f",
+        elixir = "elixir &f",
+        java = "javac &f",
+        markdown = "glow &f"
+    }
+})
+```
+
+## integretion
+Simple integretion with other plugins.
+example with Oil.nvim
+
+```lua
+["<space>b"] = {  -- B for Build
+    desc = "compile",
+    callback = function ()
+        local name = require("oil").get_cursor_entry().name
+        vim.cmd(":Comprun " .. name)
+    end
+},
+```
