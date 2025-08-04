@@ -1,0 +1,30 @@
+- [x] Go
+- [x] C++
+- [ ] Ruby
+- [ ] C#
+- [ ] Nim
+- [ ] Zig
+- [ ] Swift
+- [ ] Erlang
+- [ ] D
+- [ ] Ada
+- [ ] Jai
+- [ ] Crystal
+- [ ] Cobol
+- [ ] Fortran
+- [ ] Gleam
+- [ ] Perl
+- [ ] Nix
+- [ ] Json / Xml / Toml / Yaml
+- [ ] R
+- [ ] Scala
+- [ ] Jsx / Tsx
+- [ ] Asm
+- [ ] Clojure
+- [ ] Make
+- [ ] F#
+- [ ] Julia
+- [ ] Ocaml
+- [ ] Pascal
+- [ ] Tex
+- [ ] Typst
