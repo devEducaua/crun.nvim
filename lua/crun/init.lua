@@ -8,22 +8,27 @@ M.config = {
         c = "gcc &f -o &o",
         cpp = "g++ &f -o &o",
         haskell = "ghc &f -o &o",
+        rust = "rustc &f",
+
         kotlin = "kotlinc &f -include-runtime -d &o.jar",
+        java = "javac &f",
+
         python = "python3 &f",
         lua = "lua &f",
         php = "php &f",
-        rust = "rustc &f",
         go = "go run &f",
         elixir = "elixir &f",
-        java = "javac &f",
-        markdown = "glow &f",
-        executable = "./&f",
         bash = "bash &f",
         fish = "fish &f",
         javascript = "node &f",
-        typescript = "bun &f",
+        typescript = "tsc &f",
+        sass = "sass &f",
+        ruby = "ruby &f",
+        perl = "perl &f",
+
+        executable = "./&f",
         html = "bun &f",
-        sass = "sass &f"
+        markdown = "glow &f",
     }
 }
 
@@ -108,8 +113,16 @@ M.get_command = function (ext, file)
 
     -- Python
     elseif (ext == '.py') then
-        local getf = string.gsub(M.config.commands.python, "&f", file)
-        cmd = getf
+        local wfile = string.gsub(M.config.commands.python, "&f", file)
+        cmd = wfile
+
+    elseif (ext == '.pl') then
+        local wfile = string.gsub(M.config.commands.perl, "&f", file)
+        cmd = wfile
+
+    elseif (ext == '.rb') then
+        local wfile = string.gsub(M.config.commands.ruby, "&f", file)
+        cmd = wfile
 
     -- Lua
     elseif (ext == '.lua') then

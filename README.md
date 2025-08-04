@@ -21,22 +21,14 @@ Compile and run everything with a simple keybinding.
 require("crun").setup({
     show_command = false, -- show what command is used
     commands = { -- what the compilation/run command
-        c = "gcc &f -o &o",
-        cpp = "g++ &f -o &o",
-        haskell = "ghc &f -o &o",
-        kotlin = "kotlinc &f -include-runtime -d &o.jar",
+        c = "gcc &f -o &o", -- &f for the file and &o for the output
         python = "python3 &f",
         lua = "lua &f",
-        php = "php &f",
         rust = "rustc &f",
-        go = "go run &f",
         elixir = "elixir &f",
-        java = "javac &f",
         markdown = "glow &f",
         javascript =  "node &f",
-        typescript =  "bun &f",
-        html = "bun %f",
-        sass = "sass &f"
+        -- More on :help Crun
     }
 })
 ```
