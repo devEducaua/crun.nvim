@@ -14,10 +14,21 @@ end
 M.run = function (d)
     local args = d.fargs
     local file = args[1]
+    local pattern = "^oil//"
+
+    if not file then
+        local name = vim.api.nvim_buf_get_name(0)
+        vim.cmd(string.format("Crun %s", name))
+        return
+    end
 
     local ext = file:match("%.[^%.]+$")
 
-    file = utils.get_path(file)
+    print(vim.api.nvim_buf_get_name(0):find(pattern))
+
+    if vim.bo.filetype == "oil" then
+        file = utils.get_oil_path(file)
+    end
 
     local cmd = commands.get_command(ext, file)
 
