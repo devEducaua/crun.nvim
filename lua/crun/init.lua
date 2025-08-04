@@ -28,7 +28,7 @@ M.config = {
 }
 
 M.setup = function (opts)
-    api.nvim_create_user_command("Comprun", M.run, { nargs = "*" })
+    api.nvim_create_user_command("Crun", M.run, { nargs = "*" })
 
     M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 end
