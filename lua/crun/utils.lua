@@ -1,6 +1,6 @@
 local M = {}
 
-M.get_path = function (file)
+M.get_oil_path = function (file)
     local dir = require("oil").get_current_dir(vim.api.nvim_get_current_buf())
     local temp_path = dir .. "/" .. file
     local full_path = string.gsub(temp_path, "//", "/")
