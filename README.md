@@ -1,6 +1,16 @@
 # Comprun
 Compile and run everything with a simple keybinding.
 
+## Install
+```lua
+{
+    "devEducaua/comprun.nvim",
+    config = function()
+        require("comprun").setup()
+    end
+}
+```
+
 ## Options
 &f -> is the file name
 %o -> is the output name
@@ -19,6 +29,7 @@ require("comprun").setup({
         lua = "lua &f",
         php = "php &f",
         rust = "rustc &f",
+        go = "go run &f",
         elixir = "elixir &f",
         java = "javac &f",
         markdown = "glow &f",
