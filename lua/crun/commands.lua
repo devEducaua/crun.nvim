@@ -3,15 +3,14 @@ local M = {}
 local config = require("crun.config").config
 
 M.get_command = function (ext, file)
-    if not file then
-        vim.notify("Please pass the file", vim.log.levels.ERROR)
-        return
-    end
+    -- if not file then
+        -- vim.notify("Please pass the file", vim.log.levels.ERROR)
+    -- end
 
     local dict = {
         ['.o'] = config.commands.executable,
         ['nil'] = config.commands.executable,
-        ['.sh'] = config.commands.sh,
+        ['.sh'] = config.commands.bash,
         ['.fish'] = config.commands.fish,
         ['.c'] = config.commands.c,
         ['.cpp'] = config.commands.cpp,
@@ -21,8 +20,8 @@ M.get_command = function (ext, file)
         ['.kt'] = config.commands.kotlin,
         ['.rb'] = config.commands.ruby,
         ['.pl'] = config.commands.perl,
-        ['.lua'] = config.commands.java,
-        ['.java'] = config.commands.lua,
+        ['.lua'] = config.commands.lua,
+        ['.java'] = config.commands.java,
         ['.go'] = config.commands.go,
         ['.html'] = config.commands.html,
         ['.sass'] = config.commands.sass,
