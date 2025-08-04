@@ -15,7 +15,10 @@ M.config = {
         elixir = "elixir &f",
         java = "javac &f",
         markdown = "glow &f",
-        executable = "./&f"
+        executable = "./&f",
+        javascript = "node &f",
+        typescript = "bun &f",
+        html = "bun &f"
     }
 }
 
@@ -110,10 +113,25 @@ M.get_command = function (ext, file)
     elseif (ext == '.java') then
         local wfile = string.gsub(M.config.commands.java, "&f", file)
         cmd = wfile
+        --
+    -- Javascript
+    elseif (ext == '.js') then
+        local wfile = string.gsub(M.config.commands.javascript, "&f", file)
+        cmd = wfile
+        --
+    -- Typescript
+    elseif (ext == '.ts') then
+        local wfile = string.gsub(M.config.commands.typescript, "&f", file)
+        cmd = wfile
 
     elseif (ext == '.md') then
         local wfile = string.gsub(M.config.commands.markdown, "&f", file)
         cmd = wfile
+
+    elseif (ext == '.html') then
+        local wfile = string.gsub(M.config.commands.html, "&f", file)
+        cmd = wfile
+
     else
         cmd = ""
     end

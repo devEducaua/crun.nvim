@@ -20,7 +20,9 @@ require("comprun").setup({
         rust = "rustc &f",
         elixir = "elixir &f",
         java = "javac &f",
-        markdown = "glow &f"
+        markdown = "glow &f",
+        javascript =  "node &f",
+        typescript =  "bun &f",
     }
 })
 ```
