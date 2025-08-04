@@ -16,6 +16,8 @@ M.config = {
         java = "javac &f",
         markdown = "glow &f",
         executable = "./&f",
+        bash = "bash &f",
+        fish = "fish &f",
         javascript = "node &f",
         typescript = "bun &f",
         html = "bun &f"
@@ -59,8 +61,18 @@ M.get_command = function (ext, file)
     end
 
     -- Executable
-    if (ext == '.o' or ext == nil or ext == '.sh') then
+    if (ext == '.o' or ext == nil) then
         local wfile = string.gsub(M.config.commands.executable, "&f", file)
+        cmd = wfile
+
+    -- Bash
+    elseif (ext == ".sh") then
+        local wfile = string.gsub(M.config.commands.bash, "&f", file)
+        cmd = wfile
+
+    -- Fish
+    elseif (ext == ".fish") then
+        local wfile = string.gsub(M.config.commands.fish, "&f", file)
         cmd = wfile
 
     -- C
