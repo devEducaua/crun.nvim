@@ -1,6 +1,10 @@
 # Crun.nvim
 Compile and run everything with a simple keybinding.
 
+> [!WARNING]
+> This plugin is for study purposes only and still in progress.
+> In the meantime, you can just use Quickfix directly.
+
 ## Install
 ```lua
 {
